@@ -50,7 +50,13 @@ BETWEEN 2600 AND 3800;
 
 /* Display the Rental Number, Customer Id, Registration Number, Start and Return dates of
 all vehicle rentals. Sorted the output by Registration Number. */
+SELECT `Rental_no`,`Cust_id`,`Rego_no`, `Start_Date`, `Returned` 
+FROM `m_rental` 
+ORDER BY `Rego_no` ASC;
 
 /* List the Payment No, Payment Date, Payment Type and Amount for all payments paid by
 Credit Card where the amount exceeds $400 or where the payment number is between
 1020 and 1030. */
+SELECT `Payment_no`, `Payment_Date`, `Payment_Type`, `Amount` 
+FROM `m_payment` 
+WHERE (`Payment_Type` = "Credit" AND `Amount` > 400) OR (`Payment_no` BETWEEN 1020 AND 1030);
